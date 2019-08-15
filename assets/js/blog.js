@@ -24,7 +24,7 @@ domready(function () {
         this.post_visible = true;
         
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        window.history.pushState({}, null, "/");
+        // window.history.pushState({}, null, "/");
       },
       async load_posts(){
         const response = await fetch("posts.json", {credentials: 'include'});
