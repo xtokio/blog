@@ -1,0 +1,18 @@
+[
+  {
+    "id": 2, 
+    "filename": "posts/2.html", 
+    "title": "LEMP Stack", 
+    "date": "Octubre 15, 2018",
+    "description": "LEMP Stack es cuando configuramos nuestro servidor e instalamos Linux NGINX MySQL PHP esa sera la base de nuestro servidor para usarlo en nuestros desarrollos web…",
+    "img": "assets/img/lemp_stack.png"
+  },
+  {
+    "id": 1, 
+    "filename": "posts/1.html", 
+    "title": "Digital Ocean crear un droplet", 
+    "date": "Octubre 14, 2018",
+    "description": "He estado utilizando DigitalOcean desde el 2012 y quiero compartir como es que configuro un droplet (VPS) cada que necesito uno para un proyecto o simplemente para probar nuevas cosas.…",
+    "img": "assets/img/droplet-definition.jpg"
+  }
+  ]

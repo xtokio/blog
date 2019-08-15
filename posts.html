@@ -1,0 +1,15 @@
+<div id="posts">
+  <div v-for="post in posts">
+    <a href="#" class="read_post" data-post="1"><h1>{{post.title}}</h1></a>
+    <p class="post_author_date"> <a href="#">Luis Gomez</a> &#8226; {{post.date}}</p>
+    <p>
+      {{post.description}}
+    </p>
+    <img :src="post.img"/>
+    <br>
+    <a href="#" class="read_more read_post" data-post="1">
+      Leer mas <span class="arrow">&#x2192;</span>
+    </a>
+    <hr>
+  </div>
+</div>
