@@ -39,6 +39,15 @@ a{
 #posts img{
   max-width: 100%;
 }
+
+.fa_icon{
+  margin: 0 1rem;
+  color: #95a5a6;
+}
+.fa_icon_active, .fa_icon:hover{
+  color: #34495e;
+}
+
 /* Menu */
 header {
   background-color: #fefefe;
@@ -361,7 +370,8 @@ header.nav-active .nav__list-item:nth-child(4) {
 }
 
 .read_more{
-  margin: 16px 0;
+  position: absolute;
+  margin: 2rem 0;
 }
 
 .read_more .arrow{

@@ -6,7 +6,8 @@ domready(function () {
       posts: [],
       posts_visible: true,
       post_visible: false,
-      post_data: ""
+      post_data: "",
+      filter_active: true
     },
     methods:{
       menu_overlay(){
@@ -15,6 +16,16 @@ domready(function () {
             $(".nav__content").toggleClass("display-none");
             $(".body").toggleClass("no_scroll");
         },800);
+      },
+      filter_icon_active(icon){
+        $(".fa-th-large").removeClass("fa_icon_active");
+        $(".fa-th-list").removeClass("fa_icon_active");
+
+        $(icon).toggleClass("fa_icon_active");
+        if(icon == ".fa-th-list")
+          this.filter_active = false;
+        else
+          this.filter_active = true;
       },
       async load_page(page){
         const response_page = await fetch(page, {credentials: 'include'});
