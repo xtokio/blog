@@ -1,5 +1,13 @@
 [
   {
+    "id": 3, 
+    "filename": "posts/3.html", 
+    "title": "Configuracion NGINX", 
+    "date": "Octubre 16, 2018",
+    "description": "NGINX es el servidor web que generalmente use en todos mis proyectos y lo primero que hago es configurarlo con mi dominio ( o subdominio según sea el caso )…",
+    "img": "assets/img/logos/nginx.svg"
+  },
+  {
     "id": 2, 
     "filename": "posts/2.html", 
     "title": "LEMP Stack", 
