@@ -44,7 +44,7 @@
             <p v-show="filter_active">
               {{post.description}}
             </p>
-            <img v-show="filter_active" :src="post.img"/>
+            <img v-show="filter_active" @click="load_page(post.filename)" :src="post.img"/>
             <br>
             <a href="#" v-show="filter_active" @click="load_page(post.filename)" class="read_more" :data-post="post.id">
               Leer mas <span class="arrow">&#x2192;</span>

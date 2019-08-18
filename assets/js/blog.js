@@ -1,5 +1,5 @@
 domready(function () {
-  
+  console.log(window.location.hash);
   const app = new Vue({
     el: "#app",
     data: {
