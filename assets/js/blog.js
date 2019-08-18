@@ -1,9 +1,12 @@
 domready(function () {
-
+  
   const app = new Vue({
     el: "#app",
     data: {
       posts: [],
+      show_posts: true,
+      show_post: false,
+      show_profile: false,
       posts_visible: true,
       post_visible: false,
       post_data: "",
@@ -31,8 +34,10 @@ domready(function () {
         const response_page = await fetch(page, {credentials: 'include'});
         const content_page = await response_page.text();
         this.post_data = content_page;
-        this.posts_visible = false;
-        this.post_visible = true;
+
+        this.show_profile = false;
+        this.show_posts = false;
+        this.show_post = true;
         
         window.scrollTo({ top: 0, behavior: 'smooth' });
         // window.history.pushState({}, null, "/");
@@ -41,8 +46,10 @@ domready(function () {
         const response = await fetch("posts.json", {credentials: 'include'});
         const content = await response.json();
         this.posts = content;
-        this.post_visible = false;
-        this.posts_visible = true;
+
+        this.show_profile = false;
+        this.show_post = false;
+        this.show_posts = true;
 
         if($(".header").hasClass("nav-active"))
         {
@@ -52,13 +59,16 @@ domready(function () {
             $(".body").toggleClass("no_scroll");
           },800);
         }
-
-        console.log(content);
+      },
+      profile(){
+        this.show_profile = true;
+        this.show_post = false;
+        this.show_posts = false;
       }
     },
     watch: {
-      post_visible: function () {
-        if (this.post_visible) {
+      show_post: function () {
+        if (this.show_post) {
           this.$nextTick(function() {
             Prism.highlightAll();
           });
@@ -68,6 +78,10 @@ domready(function () {
     mounted(){
       this.load_posts();
     }
+  });
+
+  $(document).on_document("click",".profile",function(){
+    app.profile();
   });
   
 });

@@ -37,10 +37,10 @@
           </div>
       </header>
       <div class="container">
-        <div id="posts" v-if="posts_visible">
+        <div id="posts" v-if="show_posts">
           <div v-for="post in posts">
             <a href="#" @click="load_page(post.filename)" :data-post="post.id"><h1>{{post.title}}</h1></a>
-            <p class="post_author_date"> <a href="#">Luis Gomez</a> &#8226; {{post.date}}</p>
+            <p class="post_author_date"> <a href="#" @click="profile">Luis Gomez</a> &#8226; {{post.date}}</p>
             <p v-show="filter_active">
               {{post.description}}
             </p>
@@ -52,7 +52,20 @@
             <hr v-show="filter_active">
           </div>
         </div>
-        <div id="post" v-if="post_visible" v-html="post_data"></div>
+        <div id="post" v-if="show_post" v-html="post_data">
+        </div>
+        <div id="profile" v-if="show_profile">
+            <img src="assets/img/user.svg"/>
+            <h2>Luis Gomez</h2>
+            <h5>South Bend, Indidana</h5>
+            <span style="margin-top: 1rem;">Fullstack Developer</span>
+            <span style="font-weight: 300;">xtokio@gmail.com</span>
+            <p>
+              <a href="#"> <i class="fab fa-linkedin"></i> LinkedIn </a>
+              <a href="#"> <i class="fab fa-github"></i> Github </a>
+              <a href="#"> <i class="fab fa-bitbucket"></i> Bitbucket </a>
+            </p>
+        </div>
       </div>
 
     </div>
