@@ -59,6 +59,7 @@ domready(function () {
             $(".body").toggleClass("no_scroll");
           },800);
         }
+        $("#app").removeClass("display-none");
       },
       profile(){
         this.show_profile = true;
